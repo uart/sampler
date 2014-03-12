@@ -75,8 +75,8 @@ trace_mem(ADDRINT ip, ADDRINT addr, UINT32 size, THREADID tid, UINT32 ref_type)
 	(usf_addr_t)ip,
 	(usf_addr_t)addr,
 	access_counter,
-	tid,
-	size,
+	(usf_tid_t) tid,
+	(usf_alen_t) size,
 	(usf_atype_t)ref_type
     };
 
