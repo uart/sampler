@@ -108,7 +108,7 @@ instrument(INS ins, VOID *v)
 	    is_rd && is_wr ? USF_ATYPE_RW :
 	    (is_wr ? USF_ATYPE_WR : USF_ATYPE_RD);
 
-	INS_InsertCall(ins, IPOINT_BEFORE, (AFUNPTR)trace_mem,
+	INS_InsertPredicatedCall(ins, IPOINT_BEFORE, (AFUNPTR)trace_mem,
 		       IARG_INST_PTR,
 		       IARG_MEMORYOP_EA, op,
 		       IARG_UINT32, size,
